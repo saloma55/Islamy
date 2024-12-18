@@ -1,4 +1,5 @@
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -6,16 +7,11 @@ import 'package:islami/provider.dart';
 import 'package:islami/sura.dart';
 import 'package:islami/themeprovider.dart';
 import 'package:provider/provider.dart';
-
 class suradetails extends StatefulWidget{
-
-
  static const String routeName='sura';
-
   @override
   State<suradetails> createState() => _suradetailsState();
 }
-
 class _suradetailsState extends State<suradetails> {
   List<String>verses=[];
   Widget build(BuildContext context) {
@@ -31,78 +27,40 @@ class _suradetailsState extends State<suradetails> {
               themeProvider.mode==ThemeMode.light?
               'assets/images/background.jpg':
               'assets/images/bg_dark.jpg',
-              fit: BoxFit.fill,)),
+              fit: BoxFit.fill,)
+        ),
         Scaffold(
-          // backgroundColor: Colors.transparent,
           appBar: AppBar(
-
-
-            // toolbarHeight: 100,
-            // centerTitle: true,
-            // elevation: 0,
-            // backgroundColor: Colors.transparent,
-             title: Text('اسلامي'),
+            title: Text('islami'.tr()),
           ),
-
-
           body: Card(
           elevation: 0,
-            // color: Colors.white,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(40)
             ),
-
-            // decoration: BoxDecoration(
-            //     color: Colors.white,
-            //   borderRadius: BorderRadius.circular(40)
-            // ),
-            margin: EdgeInsets.only(
-              left: 5,
-              right: 5,
-              top: 50,
-              bottom: 10
+            margin: const EdgeInsets.only(
+              top: 40.0,
+              bottom: 10.0
             ),
-            // padding: EdgeInsets.all(4.0),
-
             child: Column(
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                     margin:EdgeInsets.only(
-                        top: 10,
-                       // bottom: 10
-                     ),
-
-
-                        child: Text(model.name,style: Theme.of(context).textTheme.bodyMedium)),
-                    Container(
-
-                        margin: EdgeInsets.only(
-                            left: 10,
-                          right: 10
-                        ),
-                        decoration: BoxDecoration(
-                            color: pro.mode==ThemeMode.light?Colors.black:Colors.yellow,
-                            borderRadius: BorderRadius.circular(50)
-                        ),
-
-                        child: Icon(Icons.arrow_right,
-                          color:pro.mode==ThemeMode.light? Colors.white:Colors.black,
-                          size: 30,))
-                  ],
-                ),
-                Divider(
-                  // color: Color(0xffB7935F),
+                Container(
+                 margin:const EdgeInsets.only(
+                    top: 12.0
+                 ),
+                    child: Text(model.name,style: Theme.of(context).textTheme.bodyMedium)),
+                const Divider(
                   thickness: 2,
                   indent: 80,
                    endIndent: 80,
                 ),
+                const SizedBox(
+                  height: 12,
+                ),
                 Expanded(
                   child: ListView.separated(
                     separatorBuilder:(context,index){
-                      return Divider(
+                      return const Divider(
                         color: Colors.transparent,
                         thickness: 3,
                       );
@@ -110,7 +68,6 @@ class _suradetailsState extends State<suradetails> {
                     itemCount: verses.length,
                       itemBuilder: (context,index){
                     return Text("${verses[index]}(${index+1}) ",
-                      textDirection: TextDirection.rtl,
                       textAlign: TextAlign.center,
                       style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                         fontSize: 28,

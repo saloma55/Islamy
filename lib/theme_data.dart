@@ -1,30 +1,31 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 class theme_data {
   static Color primarycolor =Color(0xffB7935F);
   static Color primarydarkcolor =Color(0xff141A2E);
-
+  // LightTheme
   static ThemeData LightTheme=ThemeData(
+    // For elevated button
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         backgroundColor: primarycolor
       )
     ),
-
-    cardTheme: CardTheme(
+    // For Card
+    cardTheme: const CardTheme(
       color: Colors.white,
 
     ),
-
+   // For bottom sheet
     bottomSheetTheme: BottomSheetThemeData(
       backgroundColor: primarycolor
     ),
+    // For divider
     dividerTheme: DividerThemeData(
       color: primarycolor
     ),
-
-    textTheme: TextTheme(
+    // For Text
+    textTheme: const TextTheme(
      bodySmall:TextStyle(
        fontSize: 25,
        fontWeight: FontWeight.w400,
@@ -40,12 +41,11 @@ class theme_data {
         fontSize: 25,
         fontWeight: FontWeight.w400
       )
-
-
     ),
-
+    // For Scaffold
       scaffoldBackgroundColor: Colors.transparent,
-      appBarTheme: AppBarTheme(
+      // For Appbar
+      appBarTheme: const AppBarTheme(
         titleTextStyle: TextStyle(
           fontSize: 28,
           color: Colors.black,
@@ -61,6 +61,7 @@ class theme_data {
           centerTitle: true,
 
       ),
+     // For BottomnavigationBar
      bottomNavigationBarTheme: BottomNavigationBarThemeData(
        type: BottomNavigationBarType.fixed,
        showUnselectedLabels: false,
@@ -71,21 +72,24 @@ class theme_data {
      )
   );
 
-
+  // DarkTheme:
   static ThemeData DarkTheme=ThemeData(
+
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
          backgroundColor: Colors.yellow
       )
     ),
+
     cardTheme: CardTheme(
       color: primarydarkcolor
     ),
-    dividerTheme: DividerThemeData(
+
+    dividerTheme: const DividerThemeData(
       color:Colors.yellow
     ),
 
-      textTheme: TextTheme(
+      textTheme: const TextTheme(
           bodySmall:TextStyle(
               fontSize: 25,
               fontWeight: FontWeight.w400,
@@ -106,7 +110,8 @@ class theme_data {
       ),
 
       scaffoldBackgroundColor: Colors.transparent,
-      appBarTheme: AppBarTheme(
+
+      appBarTheme: const AppBarTheme(
         titleTextStyle: TextStyle(
             fontSize: 28,
             color: Colors.white,
@@ -122,7 +127,8 @@ class theme_data {
         centerTitle: true,
 
       ),
-      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+
+      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         type: BottomNavigationBarType.fixed,
         showUnselectedLabels: false,
         showSelectedLabels: true,
@@ -130,7 +136,8 @@ class theme_data {
         unselectedItemColor: Colors.white,
         backgroundColor:Color(0xff141A2E),
       ),
-      bottomSheetTheme: BottomSheetThemeData(
+
+      bottomSheetTheme: const BottomSheetThemeData(
        backgroundColor: Color(0xff141A2E),
        elevation: 0,
 

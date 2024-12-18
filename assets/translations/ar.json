@@ -8,5 +8,10 @@
   "light": "مضئ",
   "arabic": "اللغة العربية",
   "english": "اللغة الاجنبية",
-  "Numberofpraises": "عدد التسبيحات"
+  "Numberofpraises": "عدد التسبيحات",
+  "settings" : "الاعدادات" ,
+  "sebha" : "السبحة ",
+  "radio" : "الراديو ",
+  "moshaf" : "المصحف ",
+  "ahadith": "الاحاديث"
 }

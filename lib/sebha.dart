@@ -1,10 +1,7 @@
 import 'dart:math';
-
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:islami/ahadeth.dart';
 import 'package:islami/provider.dart';
 import 'package:islami/theme_data.dart';
 import 'package:islami/themeprovider.dart';
@@ -15,7 +12,6 @@ class sebha extends StatefulWidget {
 }
 class _sebhaState extends State<sebha> {
   double _angle = 0.0; // Initial angle of rotation
-
   void _rotateImage() {
     setState(() {
       _angle += pi /4; // Rotate by 45 degrees (pi/4 radians)
@@ -32,7 +28,7 @@ class _sebhaState extends State<sebha> {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
        Container(
-         margin: EdgeInsets.only(
+         margin: const EdgeInsets.only(
            bottom: 10,
            top: 50
          ),
@@ -42,24 +38,19 @@ class _sebhaState extends State<sebha> {
              Image.asset(
                themeProvider.mode==ThemeMode.light?
                'assets/images/head_sebha.png':
-               'assets/images/head_sebha_dark.png'
-
-               ,
+               'assets/images/head_sebha_dark.png',
                height: 110,
              ),
              Container(
                margin: EdgeInsets.only(
-                 top: 76
+                 top: MediaQuery.of(context).size.height*0.09
                ),
                child: Transform.rotate(
                  angle: _angle,
                  child: Image.asset(
                    themeProvider.mode==ThemeMode.light?
                    'assets/images/body_sebha.png':
-                   'assets/images/body_sebha_dark.png'
-
-                   ,
-                   height: 200,
+                   'assets/images/body_sebha_dark.png', height: MediaQuery.of(context).size.height*0.3// ,
                     ),
                ),
              ),
@@ -70,11 +61,10 @@ class _sebhaState extends State<sebha> {
           child: Text('Numberofpraises'.tr(),style: Theme.of(context).textTheme.bodySmall),
         ),
         Container(
-
-          margin: EdgeInsets.symmetric(
+          margin: const EdgeInsets.symmetric(
             vertical: 20
           ),
-          padding: EdgeInsets.symmetric(
+          padding: const EdgeInsets.symmetric(
             vertical: 20,
             horizontal: 20
           ),
@@ -86,16 +76,13 @@ class _sebhaState extends State<sebha> {
         ),
         ElevatedButton(onPressed: (){
           _rotateImage();
-
           count++;
           if(count==34){
            index++;
            count=0;
-          if(index==3){
-            index=0;
+          if(index==sebha.length){
+            index=0;}
           }
-          }
-
           setState(() {
           });
         },
@@ -103,15 +90,13 @@ class _sebhaState extends State<sebha> {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20)
               ),
-              padding: EdgeInsets.symmetric(
+              padding: const EdgeInsets.symmetric(
                 horizontal: 20,
                 vertical: 5
               ),
-              // backgroundColor: theme_data.primarycolor
             ),
             child:Text(sebha[index],style: Theme.of(context).textTheme.bodyLarge)
         )
-
       ],
     );
   }

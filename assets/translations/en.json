@@ -8,5 +8,10 @@
   "light": "Light",
   "arabic": "Arabic",
   "english": "English",
-  "Numberofpraises": "Number of praises"
+  "Numberofpraises": "Number of praises",
+  "settings" : "Settings" ,
+  "sebha" : "Sebha ",
+  "radio" : "Radio ",
+  "moshaf" : "Mofhaf ",
+  "ahadith": "Ahadith"
 }

@@ -1,13 +1,11 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:islami/theme_data.dart';
-
 class bottom_sheet_lan extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
 return Padding(
-  padding: EdgeInsets.symmetric(
+  padding: const EdgeInsets.symmetric(
       horizontal: 20.0,
       vertical: 20
   ),
@@ -19,60 +17,48 @@ return Padding(
         children: [
           InkWell(
             onTap: (){
-              context.setLocale(Locale('ar'));
+              context.setLocale(const Locale('ar'));
             },
-            child: Text('arabic'.tr(),style:context.locale==Locale('ar')?TextStyle(
+            child: Text('arabic'.tr(),style:context.locale==const Locale('ar')?const TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.w400,
                 color: Colors.yellow
             ):
-            TextStyle(
+            const TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.w400,
                 color: Colors.white
             )
             ),
           ),
-           context.locale==Locale('ar')?Icon(Icons.done,size: 30,color: Colors.white,):
-               SizedBox(
-
-               )
+           context.locale==const Locale('ar')?const Icon(Icons.done,size: 30,color: Colors.white,):
+               const SizedBox()
         ],
       ),
-      SizedBox(
-        height: 15,
-      ),
+      const SizedBox(height: 15),
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             InkWell(
               onTap: (){
-                 context.setLocale(Locale('en'));
+                 context.setLocale(const Locale('en'));
               },
-              child: Text('english'.tr(),style:context.locale==Locale('en')?TextStyle(
+              child: Text('english'.tr(),style:context.locale==const Locale('en')?const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.w400,
                   color: Colors.yellow
               ):
-              TextStyle(
+              const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.w400,
                   color: Colors.white
-              ) ,
+              ),),
             ),
-
-            ),
-            context.locale==Locale('en')?Icon(Icons.done,size: 30,color: Colors.white,):
-            SizedBox(
-
-            )
+            context.locale==const Locale('en')?const Icon(Icons.done,size: 30,color: Colors.white,):
+            const SizedBox()
           ]
       )
     ],
-
-
   ),
-);
-  }
-
+);}
 }
